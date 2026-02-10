@@ -1,8 +1,8 @@
-# yashwanthkrishna.dev — Personal Portfolio
+# yashwanthkrishna.dev
 
-My personal portfolio website built to showcase my work, skills, and experience as a Backend Software Engineer.
+My personal portfolio — built to showcase my work, skills, and experience as a Backend Software Engineer.
 
-🔗 **Live:** [View Portfolio →](https://yashwanth-krishna.vercel.app/)
+🔗 **Live:** [yashwanthkrishna.dev](https://yashwanth-krishna.vercel.app/)
 
 ---
 
@@ -14,7 +14,7 @@ This is my developer portfolio where I share what I've built, the technologies I
 
 ## Built With
 
-- **Framework:** Next.js 16
+- **Framework:** Next.js
 - **Styling:** Tailwind CSS
 - **Animations:** Framer Motion
 - **Icons:** React Icons
@@ -24,12 +24,14 @@ This is my developer portfolio where I share what I've built, the technologies I
 
 ## Sections
 
-- **Hero** — Quick intro and tech summary
-- **About** — Who I am and what drives me
-- **Tech Stack** — Technologies I use daily
-- **Experience** — Companies I've worked with
-- **Projects** — Things I've built
-- **Contact** — How to reach me
+| Section | What's there |
+|---|---|
+| Hero | Quick intro and tech summary |
+| About | Who I am and what drives me |
+| Tech Stack | Technologies I use daily |
+| Experience | Companies I've worked with |
+| Projects | Things I've built |
+| Contact | How to reach me |
 
 ---
 
@@ -47,35 +49,26 @@ npm install
 
 # Start dev server
 npm run dev
-
-# Open http://localhost:3000
 ```
+
+Open [http://localhost:3000](http://localhost:3000)
 
 ---
 
 ## Deployment
 
-Deployed on [Vercel](https://vercel.com). Every push to `main` triggers an automatic deployment.
+Deployed on [Vercel](https://vercel.com). Every push to `main` triggers automatic deployment.
 
 ---
 
 ## Contact
 
-- **Email:** yashwanthkrishne@gmail.com
-- **LinkedIn:** [Yashwanth Krishna](https://www.linkedin.com/in/yashwanth-krishna-bab2b0132/)
-- **GitHub:** [Yashwanth-K](https://github.com/Yashwanth-K)
+📩 [yashwanthkrishne@gmail.com](mailto:yashwanthkrishne@gmail.com)
+
+💼 [LinkedIn](https://www.linkedin.com/in/yashwanth-krishna-bab2b0132/)
+
+💻 [GitHub](https://github.com/Yashwanth-K)
 
 ---
 
 Made with ☕ and curiosity.
-```
-
-Push:
-
-```bash
-git add .
-git commit -m "add portfolio README"
-git push
-```
-
----
