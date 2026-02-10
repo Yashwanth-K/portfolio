@@ -14,13 +14,29 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+      if (window.innerWidth >= 1024) {
+        setIsOpen(false);
+      }
+    };
+
+    // Set initial value
+    handleResize();
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -47,87 +63,94 @@ export default function Navbar() {
           alignItems: 'center',
         }}
       >
+        {/* Logo */}
         <a
           href="#"
           style={{
-            fontSize: 'clamp(20px, 5vw, 24px)',
+            fontSize: '22px',
             fontWeight: 'bold',
             background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             textDecoration: 'none',
+            flexShrink: 0,
           }}
         >
           YK.
         </a>
 
         {/* Desktop Links */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '32px',
-          }}
-          className="hidden lg:flex"
-        >
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              style={{
-                fontSize: '14px',
-                color: '#a0a0a0',
-                textDecoration: 'none',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => (e.target.style.color = '#ffffff')}
-              onMouseLeave={(e) => (e.target.style.color = '#a0a0a0')}
-            >
-              {link.name}
-            </a>
-          ))}
-          <a
-            href="/Yashwanth_Krishna_Resume.pdf"
-            target="_blank"
+        {!isMobile && (
+          <div
             style={{
-              fontSize: '14px',
-              padding: '8px 20px',
-              background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
-              borderRadius: '8px',
-              color: '#ffffff',
-              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '32px',
             }}
           >
-            Resume
-          </a>
-        </div>
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                style={{
+                  fontSize: '14px',
+                  color: '#a0a0a0',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={(e) => (e.target.style.color = '#ffffff')}
+                onMouseLeave={(e) => (e.target.style.color = '#a0a0a0')}
+              >
+                {link.name}
+              </a>
+            ))}
+            <a
+              href="/Yashwanth_Krishna_Resume.pdf"
+              target="_blank"
+              style={{
+                fontSize: '14px',
+                padding: '8px 20px',
+                background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
+                borderRadius: '8px',
+                color: '#ffffff',
+                textDecoration: 'none',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Resume
+            </a>
+          </div>
+        )}
 
         {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden"
-          style={{
-            color: '#ffffff',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: '4px',
-            display: 'flex',
-            alignItems: 'center',
-          }}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
-        </button>
+        {isMobile && (
+          <button
+            style={{
+              color: '#ffffff',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: '4px',
+              display: 'flex',
+              alignItems: 'center',
+            }}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+          </button>
+        )}
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
+      {isOpen && isMobile && (
         <div
-          className="lg:hidden"
           style={{
             backgroundColor: '#111111',
             borderTop: '1px solid #2a2a2a',
             padding: '12px 20px 16px 20px',
+            maxHeight: 'calc(100vh - 60px)',
+            overflowY: 'auto',
           }}
         >
           {navLinks.map((link) => (
@@ -137,10 +160,10 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               style={{
                 display: 'block',
-                padding: '10px 0',
+                padding: '12px 0',
                 color: '#a0a0a0',
                 textDecoration: 'none',
-                fontSize: '14px',
+                fontSize: '15px',
                 borderBottom: '1px solid #1a1a1a',
               }}
             >
