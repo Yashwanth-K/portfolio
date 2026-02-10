@@ -55,8 +55,8 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" style={{ padding: '120px 24px', borderTop: '1px solid #1a1a1a' }}>
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+    <section id="experience" style={{ padding: 'clamp(60px, 10vw, 120px) 20px', borderTop: '1px solid #1a1a1a' }}>
+      <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
 
         {/* Header */}
         <motion.div
@@ -64,12 +64,12 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          style={{ textAlign: 'center', marginBottom: '60px' }}
+          style={{ textAlign: 'center', marginBottom: 'clamp(36px, 6vw, 60px)' }}
         >
           <p style={{ color: '#3b82f6', fontSize: '14px', fontWeight: '600', marginBottom: '12px', letterSpacing: '2px', textTransform: 'uppercase' }}>
             Experience
           </p>
-          <h2 style={{ fontSize: '36px', fontWeight: 'bold' }}>
+          <h2 style={{ fontSize: 'clamp(24px, 6vw, 36px)', fontWeight: 'bold' }}>
             Where I&apos;ve{' '}
             <span style={{ background: 'linear-gradient(to right, #3b82f6, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               worked
@@ -78,7 +78,7 @@ export default function Experience() {
         </motion.div>
 
         {/* Experience Cards */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.company}
@@ -87,7 +87,7 @@ export default function Experience() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               style={{
-                padding: '32px',
+                padding: 'clamp(20px, 4vw, 32px)',
                 backgroundColor: '#1a1a1a',
                 border: '1px solid #2a2a2a',
                 borderRadius: '12px',
@@ -101,33 +101,47 @@ export default function Experience() {
               }}
             >
               {/* Company Header */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', marginBottom: '8px' }}>
-                <div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '4px' }}>{exp.company}</h3>
-                  <p style={{ color: '#a0a0a0', fontSize: '15px' }}>{exp.role}</p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+                <div style={{ minWidth: 0 }}>
+                  <h3 style={{ fontSize: 'clamp(16px, 4vw, 20px)', fontWeight: 'bold', marginBottom: '4px' }}>{exp.company}</h3>
+                  <p style={{ color: '#a0a0a0', fontSize: 'clamp(13px, 3vw, 15px)' }}>{exp.role}</p>
                 </div>
-                <div style={{ textAlign: 'right' }}>
-                  <span style={{ fontSize: '12px', padding: '4px 12px', backgroundColor: 'rgba(59,130,246,0.1)', color: '#3b82f6', borderRadius: '20px' }}>
+                <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                  <span style={{ fontSize: 'clamp(10px, 2.5vw, 12px)', padding: '3px 10px', backgroundColor: 'rgba(59,130,246,0.1)', color: '#3b82f6', borderRadius: '20px', whiteSpace: 'nowrap' }}>
                     {exp.type}
                   </span>
-                  <p style={{ color: '#666', fontSize: '13px', marginTop: '8px' }}>{exp.period}</p>
+                  <p style={{ color: '#666', fontSize: 'clamp(11px, 2.5vw, 13px)', marginTop: '6px', whiteSpace: 'nowrap' }}>{exp.period}</p>
                 </div>
               </div>
 
               {/* Highlights */}
-              <ul style={{ margin: '20px 0', paddingLeft: '0', listStyle: 'none' }}>
+              <ul style={{ margin: '16px 0', paddingLeft: '0', listStyle: 'none' }}>
                 {exp.highlights.map((point, i) => (
-                  <li key={i} style={{ color: '#a0a0a0', fontSize: '14px', lineHeight: '1.8', display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '8px' }}>
+                  <li key={i} style={{
+                    color: '#a0a0a0',
+                    fontSize: 'clamp(12px, 3vw, 14px)',
+                    lineHeight: '1.7',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '8px',
+                    marginBottom: '8px',
+                  }}>
                     <span style={{ color: '#3b82f6', marginTop: '2px', flexShrink: 0 }}>▹</span>
-                    {point}
+                    <span>{point}</span>
                   </li>
                 ))}
               </ul>
 
               {/* Tech Tags */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {exp.tech.map((t) => (
-                  <span key={t} style={{ fontSize: '12px', padding: '4px 10px', backgroundColor: '#2a2a2a', borderRadius: '4px', color: '#a0a0a0' }}>
+                  <span key={t} style={{
+                    fontSize: 'clamp(10px, 2.5vw, 12px)',
+                    padding: '3px 8px',
+                    backgroundColor: '#2a2a2a',
+                    borderRadius: '4px',
+                    color: '#a0a0a0',
+                  }}>
                     {t}
                   </span>
                 ))}

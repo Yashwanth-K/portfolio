@@ -47,8 +47,8 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" style={{ padding: '120px 24px', borderTop: '1px solid #1a1a1a' }}>
-      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+    <section id="projects" style={{ padding: 'clamp(60px, 10vw, 120px) 20px', borderTop: '1px solid #1a1a1a' }}>
+      <div style={{ width: '100%', maxWidth: '900px', margin: '0 auto' }}>
 
         {/* Header */}
         <motion.div
@@ -56,12 +56,12 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          style={{ textAlign: 'center', marginBottom: '60px' }}
+          style={{ textAlign: 'center', marginBottom: 'clamp(36px, 6vw, 60px)' }}
         >
           <p style={{ color: '#3b82f6', fontSize: '14px', fontWeight: '600', marginBottom: '12px', letterSpacing: '2px', textTransform: 'uppercase' }}>
             Projects
           </p>
-          <h2 style={{ fontSize: '36px', fontWeight: 'bold' }}>
+          <h2 style={{ fontSize: 'clamp(24px, 6vw, 36px)', fontWeight: 'bold' }}>
             Things I&apos;ve{' '}
             <span style={{ background: 'linear-gradient(to right, #3b82f6, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               built
@@ -70,7 +70,7 @@ export default function Projects() {
         </motion.div>
 
         {/* All Projects */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '800px', margin: '0 auto' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '800px', margin: '0 auto' }}>
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -79,7 +79,7 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               style={{
-                padding: '32px',
+                padding: 'clamp(20px, 4vw, 32px)',
                 backgroundColor: '#1a1a1a',
                 border: '1px solid #2a2a2a',
                 borderRadius: '12px',
@@ -89,8 +89,8 @@ export default function Projects() {
               onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#2a2a2a')}
             >
               {/* Title Row */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-                <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
+                <div style={{ flex: 1, minWidth: 0 }}>
                   {project.featured && (
                     <span style={{
                       fontSize: '11px',
@@ -104,17 +104,17 @@ export default function Projects() {
                       ★ Featured Project
                     </span>
                   )}
-                  <h3 style={{ fontSize: '20px', fontWeight: 'bold' }}>{project.title}</h3>
+                  <h3 style={{ fontSize: 'clamp(16px, 4vw, 20px)', fontWeight: 'bold', lineHeight: '1.3' }}>{project.title}</h3>
                 </div>
                 {project.github && (
-                  <a href={project.github} target="_blank" style={{ color: '#a0a0a0', textDecoration: 'none' }}>
-                    <FiGithub size={20} />
+                  <a href={project.github} target="_blank" style={{ color: '#a0a0a0', textDecoration: 'none', flexShrink: 0, padding: '2px' }}>
+                    <FiGithub size={18} />
                   </a>
                 )}
               </div>
 
               {/* Description */}
-              <p style={{ color: '#a0a0a0', fontSize: '14px', lineHeight: '1.8', marginBottom: '16px' }}>
+              <p style={{ color: '#a0a0a0', fontSize: 'clamp(13px, 3vw, 14px)', lineHeight: '1.8', marginBottom: '14px' }}>
                 {project.description}
               </p>
 
@@ -124,25 +124,26 @@ export default function Projects() {
                   {project.highlights.map((h, i) => (
                     <p key={i} style={{
                       color: '#a0a0a0',
-                      fontSize: '13px',
+                      fontSize: 'clamp(12px, 2.8vw, 13px)',
                       display: 'flex',
                       alignItems: 'flex-start',
                       gap: '8px',
                       marginBottom: '8px',
-                      lineHeight: '1.6',
+                      lineHeight: '1.7',
                     }}>
-                      <span style={{ color: '#22c55e', marginTop: '2px', flexShrink: 0 }}>✓</span> {h}
+                      <span style={{ color: '#22c55e', marginTop: '2px', flexShrink: 0 }}>✓</span>
+                      <span>{h}</span>
                     </p>
                   ))}
                 </div>
               )}
 
               {/* Tech */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {project.tech.map((t) => (
                   <span key={t} style={{
-                    fontSize: '12px',
-                    padding: '4px 10px',
+                    fontSize: 'clamp(10px, 2.5vw, 12px)',
+                    padding: '3px 8px',
                     backgroundColor: '#2a2a2a',
                     borderRadius: '4px',
                     color: '#3b82f6',

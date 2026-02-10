@@ -10,76 +10,78 @@ import {
   SiGithubactions, SiGradle, SiApachemaven, SiJsonwebtokens,
 } from 'react-icons/si';
 
+const iconSize = 'clamp(22px, 5vw, 30px)';
+
 const techCategories = [
   {
     title: 'Languages',
     items: [
-      { name: 'Java', icon: <FaJava size={30} /> },
-      { name: 'Python', icon: <FaPython size={30} /> },
-      { name: 'JavaScript', icon: <FaJs size={30} /> },
+      { name: 'Java', icon: <FaJava /> },
+      { name: 'Python', icon: <FaPython /> },
+      { name: 'JavaScript', icon: <FaJs /> },
     ],
   },
   {
     title: 'Frameworks & Libraries',
     items: [
-      { name: 'Spring Boot', icon: <SiSpringboot size={30} /> },
-      { name: 'React', icon: <SiReact size={30} /> },
-      { name: 'Hibernate', icon: <SiHibernate size={30} /> },
+      { name: 'Spring Boot', icon: <SiSpringboot /> },
+      { name: 'React', icon: <SiReact /> },
+      { name: 'Hibernate', icon: <SiHibernate /> },
     ],
   },
   {
     title: 'Databases',
     items: [
-      { name: 'PostgreSQL', icon: <SiPostgresql size={30} /> },
-      { name: 'MySQL', icon: <SiPostgresql size={30} /> },
-      { name: 'MongoDB', icon: <SiMongodb size={30} /> },
+      { name: 'PostgreSQL', icon: <SiPostgresql /> },
+      { name: 'MySQL', icon: <SiPostgresql /> },
+      { name: 'MongoDB', icon: <SiMongodb /> },
     ],
   },
   {
     title: 'Caching & Search',
     items: [
-      { name: 'Redis', icon: <SiRedis size={30} /> },
-      { name: 'Elasticsearch', icon: <SiElasticsearch size={30} /> },
+      { name: 'Redis', icon: <SiRedis /> },
+      { name: 'Elasticsearch', icon: <SiElasticsearch /> },
     ],
   },
   {
     title: 'Messaging & Streaming',
     items: [
-      { name: 'Apache Kafka', icon: <SiApachekafka size={30} /> },
-      { name: 'RabbitMQ', icon: <SiRabbitmq size={30} /> },
+      { name: 'Apache Kafka', icon: <SiApachekafka /> },
+      { name: 'RabbitMQ', icon: <SiRabbitmq /> },
     ],
   },
   {
     title: 'Cloud & Infrastructure',
     items: [
-      { name: 'AWS', icon: <FaAws size={30} /> },
-      { name: 'Docker', icon: <FaDocker size={30} /> },
-      { name: 'Kubernetes', icon: <SiKubernetes size={30} /> },
+      { name: 'AWS', icon: <FaAws /> },
+      { name: 'Docker', icon: <FaDocker /> },
+      { name: 'Kubernetes', icon: <SiKubernetes /> },
     ],
   },
   {
     title: 'Security',
     items: [
-      { name: 'JWT', icon: <SiJsonwebtokens size={30} /> },
-      { name: 'Spring Security', icon: <SiSpringboot size={30} /> },
+      { name: 'JWT', icon: <SiJsonwebtokens /> },
+      { name: 'Spring Security', icon: <SiSpringboot /> },
     ],
   },
   {
     title: 'DevOps & Tools',
     items: [
-      { name: 'Git', icon: <FaGitAlt size={30} /> },
-      { name: 'GitHub Actions', icon: <SiGithubactions size={30} /> },
-      { name: 'Linux', icon: <FaLinux size={30} /> },
-      { name: 'Gradle', icon: <SiGradle size={30} /> },
-      { name: 'Maven', icon: <SiApachemaven size={30} /> },
+      { name: 'Git', icon: <FaGitAlt /> },
+      { name: 'GitHub Actions', icon: <SiGithubactions /> },
+      { name: 'Linux', icon: <FaLinux /> },
+      { name: 'Gradle', icon: <SiGradle /> },
+      { name: 'Maven', icon: <SiApachemaven /> },
     ],
   },
 ];
 
 export default function TechStack() {
   return (
-    <section id="techstack" style={{ padding: '120px 24px', borderTop: '1px solid #1a1a1a' }}>
-      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+    <section id="techstack" style={{ padding: 'clamp(60px, 10vw, 120px) 20px', borderTop: '1px solid #1a1a1a' }}>
+      <div style={{ width: '100%', maxWidth: '900px', margin: '0 auto' }}>
 
         {/* Header */}
         <motion.div
@@ -87,12 +89,12 @@ export default function TechStack() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          style={{ textAlign: 'center', marginBottom: '60px' }}
+          style={{ textAlign: 'center', marginBottom: 'clamp(36px, 6vw, 60px)' }}
         >
           <p style={{ color: '#3b82f6', fontSize: '14px', fontWeight: '600', marginBottom: '12px', letterSpacing: '2px', textTransform: 'uppercase' }}>
             Tech Stack
           </p>
-          <h2 style={{ fontSize: '36px', fontWeight: 'bold' }}>
+          <h2 style={{ fontSize: 'clamp(24px, 6vw, 36px)', fontWeight: 'bold' }}>
             Technologies I{' '}
             <span style={{ background: 'linear-gradient(to right, #3b82f6, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               work with
@@ -104,8 +106,8 @@ export default function TechStack() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '24px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
+            gap: '16px',
           }}
         >
           {techCategories.map((category, catIndex) => (
@@ -116,21 +118,21 @@ export default function TechStack() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: catIndex * 0.08 }}
               style={{
-                padding: '28px',
+                padding: 'clamp(20px, 4vw, 28px)',
                 backgroundColor: '#1a1a1a',
                 border: '1px solid #2a2a2a',
                 borderRadius: '12px',
                 textAlign: 'center',
               }}
             >
-              <h3 style={{ fontSize: '12px', fontWeight: '600', color: '#3b82f6', marginBottom: '20px', letterSpacing: '2px', textTransform: 'uppercase' }}>
+              <h3 style={{ fontSize: 'clamp(10px, 2.5vw, 12px)', fontWeight: '600', color: '#3b82f6', marginBottom: 'clamp(12px, 3vw, 20px)', letterSpacing: '2px', textTransform: 'uppercase' }}>
                 {category.title}
               </h3>
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: category.items.length <= 2 ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)',
-                  gap: '12px',
+                  gridTemplateColumns: category.items.length <= 2 ? 'repeat(2, 1fr)' : `repeat(${Math.min(category.items.length, 3)}, 1fr)`,
+                  gap: '8px',
                 }}
               >
                 {category.items.map((tech) => (
@@ -140,8 +142,8 @@ export default function TechStack() {
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
-                      gap: '8px',
-                      padding: '12px 8px',
+                      gap: '6px',
+                      padding: 'clamp(8px, 2vw, 12px) 4px',
                       borderRadius: '8px',
                       transition: 'background-color 0.2s',
                       cursor: 'default',
@@ -149,8 +151,8 @@ export default function TechStack() {
                     onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#2a2a2a')}
                     onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                   >
-                    <span style={{ color: '#a0a0a0' }}>{tech.icon}</span>
-                    <span style={{ fontSize: '11px', color: '#a0a0a0' }}>{tech.name}</span>
+                    <span style={{ color: '#a0a0a0', fontSize: iconSize, display: 'flex' }}>{tech.icon}</span>
+                    <span style={{ fontSize: 'clamp(9px, 2.2vw, 11px)', color: '#a0a0a0' }}>{tech.name}</span>
                   </div>
                 ))}
               </div>

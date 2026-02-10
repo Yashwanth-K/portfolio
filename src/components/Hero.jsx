@@ -14,7 +14,8 @@ export default function Hero() {
         alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
-        padding: '0 24px',
+        padding: '80px 20px 40px 20px',
+        overflow: 'hidden',
       }}
     >
       {/* Background Glow */}
@@ -22,9 +23,9 @@ export default function Hero() {
         style={{
           position: 'absolute',
           top: '25%',
-          left: '25%',
-          width: '400px',
-          height: '400px',
+          left: '10%',
+          width: 'min(400px, 60vw)',
+          height: 'min(400px, 60vw)',
           background: 'rgba(59, 130, 246, 0.08)',
           borderRadius: '50%',
           filter: 'blur(80px)',
@@ -34,21 +35,21 @@ export default function Hero() {
         style={{
           position: 'absolute',
           bottom: '25%',
-          right: '25%',
-          width: '400px',
-          height: '400px',
+          right: '10%',
+          width: 'min(400px, 60vw)',
+          height: 'min(400px, 60vw)',
           background: 'rgba(139, 92, 246, 0.08)',
           borderRadius: '50%',
           filter: 'blur(80px)',
         }}
       ></div>
 
-      <div style={{ maxWidth: '700px', textAlign: 'center', position: 'relative', zIndex: 10 }}>
+      <div style={{ width: '100%', maxWidth: '700px', textAlign: 'center', position: 'relative', zIndex: 10 }}>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          style={{ color: '#3b82f6', fontSize: '18px', marginBottom: '16px', fontWeight: '500' }}
+          style={{ color: '#3b82f6', fontSize: 'clamp(15px, 3.5vw, 18px)', marginBottom: '12px', fontWeight: '500' }}
         >
           Hi, I&apos;m
         </motion.p>
@@ -57,7 +58,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          style={{ fontSize: '56px', fontWeight: 'bold', marginBottom: '16px', lineHeight: '1.1' }}
+          style={{ fontSize: 'clamp(32px, 9vw, 56px)', fontWeight: 'bold', marginBottom: '12px', lineHeight: '1.1' }}
         >
           Yashwanth{' '}
           <span
@@ -75,7 +76,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          style={{ fontSize: '24px', color: '#a0a0a0', marginBottom: '24px', fontWeight: '400' }}
+          style={{ fontSize: 'clamp(17px, 4.5vw, 24px)', color: '#a0a0a0', marginBottom: '20px', fontWeight: '400' }}
         >
           Backend Software Engineer
         </motion.h2>
@@ -86,15 +87,16 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           style={{
             color: '#a0a0a0',
-            fontSize: '17px',
+            fontSize: 'clamp(14px, 3.5vw, 17px)',
             lineHeight: '1.8',
-            marginBottom: '40px',
+            marginBottom: '32px',
             maxWidth: '600px',
-            margin: '0 auto 40px auto',
+            margin: '0 auto 32px auto',
+            padding: '0 8px',
           }}
         >
           Backend engineer who cares about both the code and the business 
-          outcome. 4+ years of building systems that don't just work — 
+          outcome. 4+ years of building systems that don&apos;t just work — 
           they scale.
         </motion.p>
 
@@ -106,20 +108,22 @@ export default function Hero() {
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            gap: '10px',
-            marginBottom: '40px',
+            gap: '8px',
+            marginBottom: '32px',
+            padding: '0 8px',
           }}
         >
           {techTags.map((tech) => (
             <span
               key={tech}
               style={{
-                padding: '6px 16px',
-                fontSize: '13px',
+                padding: '5px 12px',
+                fontSize: 'clamp(11px, 2.8vw, 13px)',
                 backgroundColor: '#1a1a1a',
                 border: '1px solid #2a2a2a',
                 borderRadius: '20px',
                 color: '#a0a0a0',
+                whiteSpace: 'nowrap',
               }}
             >
               {tech}
@@ -131,18 +135,18 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginBottom: '48px' }}
+          style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '40px', flexWrap: 'wrap' }}
         >
           <a
             href="#projects"
             style={{
-              padding: '12px 28px',
+              padding: '10px 24px',
               background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
               borderRadius: '8px',
               fontWeight: '500',
               color: '#ffffff',
               textDecoration: 'none',
-              fontSize: '15px',
+              fontSize: 'clamp(13px, 3vw, 15px)',
             }}
           >
             View My Work
@@ -150,13 +154,13 @@ export default function Hero() {
           <a
             href="#contact"
             style={{
-              padding: '12px 28px',
+              padding: '10px 24px',
               border: '1px solid #2a2a2a',
               borderRadius: '8px',
               fontWeight: '500',
               color: '#ffffff',
               textDecoration: 'none',
-              fontSize: '15px',
+              fontSize: 'clamp(13px, 3vw, 15px)',
             }}
           >
             Get In Touch
@@ -170,13 +174,13 @@ export default function Hero() {
           style={{ display: 'flex', justifyContent: 'center', gap: '24px' }}
         >
           <a href="https://github.com/Yashwanth-K" target="_blank" style={{ color: '#a0a0a0', textDecoration: 'none' }}>
-            <FiGithub size={22} />
+            <FiGithub size={20} />
           </a>
           <a href="https://www.linkedin.com/in/yashwanth-k/" target="_blank" style={{ color: '#a0a0a0', textDecoration: 'none' }}>
-            <FiLinkedin size={22} />
+            <FiLinkedin size={20} />
           </a>
           <a href="mailto:yashwanthkrishne@gmail.com" style={{ color: '#a0a0a0', textDecoration: 'none' }}>
-            <FiMail size={22} />
+            <FiMail size={20} />
           </a>
         </motion.div>
       </div>
@@ -184,9 +188,9 @@ export default function Hero() {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        style={{ position: 'absolute', bottom: '40px', left: '50%', transform: 'translateX(-50%)' }}
+        style={{ position: 'absolute', bottom: '24px', left: '50%', transform: 'translateX(-50%)' }}
       >
-        <FiArrowDown style={{ color: '#a0a0a0' }} size={20} />
+        <FiArrowDown style={{ color: '#a0a0a0' }} size={18} />
       </motion.div>
     </section>
   );

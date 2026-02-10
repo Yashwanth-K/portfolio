@@ -25,17 +25,23 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#0a0a0a]/95 backdrop-blur-md border-b border-[#2a2a2a]'
-          : 'bg-transparent'
-      }`}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        transition: 'all 0.3s',
+        backgroundColor: scrolled ? 'rgba(10, 10, 10, 0.95)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(12px)' : 'none',
+        borderBottom: scrolled ? '1px solid #2a2a2a' : '1px solid transparent',
+      }}
     >
       <div
         style={{
           maxWidth: '1100px',
           margin: '0 auto',
-          padding: '16px 24px',
+          padding: '14px 20px',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -44,7 +50,7 @@ export default function Navbar() {
         <a
           href="#"
           style={{
-            fontSize: '24px',
+            fontSize: 'clamp(20px, 5vw, 24px)',
             fontWeight: 'bold',
             background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
             WebkitBackgroundClip: 'text',
@@ -81,7 +87,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="/Yashwanth_Krishna_Resume.pdf"
             target="_blank"
             style={{
               fontSize: '14px',
@@ -99,10 +105,18 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           className="lg:hidden"
-          style={{ color: '#ffffff', background: 'none', border: 'none', cursor: 'pointer' }}
+          style={{
+            color: '#ffffff',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: '4px',
+            display: 'flex',
+            alignItems: 'center',
+          }}
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
         </button>
       </div>
 
@@ -113,7 +127,7 @@ export default function Navbar() {
           style={{
             backgroundColor: '#111111',
             borderTop: '1px solid #2a2a2a',
-            padding: '16px 24px',
+            padding: '12px 20px 16px 20px',
           }}
         >
           {navLinks.map((link) => (
@@ -123,14 +137,34 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               style={{
                 display: 'block',
-                padding: '12px 0',
+                padding: '10px 0',
                 color: '#a0a0a0',
                 textDecoration: 'none',
+                fontSize: '14px',
+                borderBottom: '1px solid #1a1a1a',
               }}
             >
               {link.name}
             </a>
           ))}
+          <a
+            href="/Yashwanth_Krishna_Resume.pdf"
+            target="_blank"
+            onClick={() => setIsOpen(false)}
+            style={{
+              display: 'block',
+              marginTop: '12px',
+              padding: '10px 0',
+              textAlign: 'center',
+              background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
+              borderRadius: '8px',
+              color: '#ffffff',
+              textDecoration: 'none',
+              fontSize: '14px',
+            }}
+          >
+            Resume
+          </a>
         </div>
       )}
     </nav>

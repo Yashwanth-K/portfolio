@@ -9,8 +9,6 @@
   --accent: #3b82f6;
   --accent-hover: #2563eb;
   --border: #2a2a2a;
-  --gradient-start: #3b82f6;
-  --gradient-end: #8b5cf6;
 }
 
 * {
@@ -21,13 +19,15 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -41,10 +41,6 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
 }
 
 ::selection {

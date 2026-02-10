@@ -28,8 +28,8 @@ const highlights = [
 
 export default function About() {
   return (
-    <section id="about" style={{ padding: '120px 24px', borderTop: '1px solid #1a1a1a' }}>
-      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+    <section id="about" style={{ padding: 'clamp(60px, 10vw, 120px) 20px', borderTop: '1px solid #1a1a1a' }}>
+      <div style={{ width: '100%', maxWidth: '900px', margin: '0 auto' }}>
 
         {/* Header */}
         <motion.div
@@ -37,12 +37,12 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          style={{ textAlign: 'center', marginBottom: '60px' }}
+          style={{ textAlign: 'center', marginBottom: 'clamp(36px, 6vw, 60px)' }}
         >
           <p style={{ color: '#3b82f6', fontSize: '14px', fontWeight: '600', marginBottom: '12px', letterSpacing: '2px', textTransform: 'uppercase' }}>
             About Me
           </p>
-          <h2 style={{ fontSize: '36px', fontWeight: 'bold', lineHeight: '1.3' }}>
+          <h2 style={{ fontSize: 'clamp(24px, 6vw, 36px)', fontWeight: 'bold', lineHeight: '1.3', padding: '0 8px' }}>
             Give me a problem,  
             <span style={{ background: 'linear-gradient(to right, #3b82f6, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               {' '}I&apos;ll{' '} figure it out
@@ -56,16 +56,16 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          style={{ maxWidth: '700px', margin: '0 auto 60px auto', textAlign: 'center' }}
+          style={{ maxWidth: '700px', margin: '0 auto', marginBottom: 'clamp(36px, 6vw, 60px)', textAlign: 'center', padding: '0 8px' }}
         >
-          <p style={{ color: '#a0a0a0', lineHeight: '1.9', marginBottom: '20px', fontSize: '16px' }}>
+          <p style={{ color: '#a0a0a0', lineHeight: '1.9', marginBottom: '20px', fontSize: 'clamp(14px, 3.5vw, 16px)' }}>
           I&apos;m a backend engineer with 4+ years of experience, currently focused on
           building reliable systems that solve real business problems. I&apos;ve worked
           at TCS on Apple&apos;s enterprise platform and at Winon Wings building
           e-commerce infrastructure — each role teaching me something new about
           writing software that holds up in production.
           </p>
-          <p style={{ color: '#a0a0a0', lineHeight: '1.9', marginBottom: '20px', fontSize: '16px' }}>
+          <p style={{ color: '#a0a0a0', lineHeight: '1.9', marginBottom: '20px', fontSize: 'clamp(14px, 3.5vw, 16px)' }}>
           I&apos;m someone who genuinely enjoys the challenge of breaking down complex
           problems — whether it&apos;s designing a system from scratch, debugging
           something at 2 AM, or figuring out how to make AI work within existing
@@ -73,7 +73,7 @@ export default function About() {
           business impact of what I build. For me, the best code is the one that
           turns into a working product someone actually uses.
           </p>
-          <p style={{ color: '#a0a0a0', lineHeight: '1.9', fontSize: '16px' }}>
+          <p style={{ color: '#a0a0a0', lineHeight: '1.9', fontSize: 'clamp(14px, 3.5vw, 16px)' }}>
           Outside of work, I spend my time playing cricket and chess, participating
           in coding challenges, and exploring how AI can be integrated into
           everyday engineering. I&apos;m always looking for the next problem worth solving.
@@ -84,10 +84,11 @@ export default function About() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '20px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
+            gap: '16px',
             maxWidth: '900px',
             margin: '0 auto',
+            padding: '0 8px',
           }}
         >
           {highlights.map((item, index) => (
@@ -98,7 +99,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               style={{
-                padding: '28px',
+                padding: 'clamp(20px, 4vw, 28px)',
                 backgroundColor: '#1a1a1a',
                 border: '1px solid #2a2a2a',
                 borderRadius: '12px',
@@ -108,11 +109,11 @@ export default function About() {
               onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(59,130,246,0.5)')}
               onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#2a2a2a')}
             >
-              <div style={{ color: '#3b82f6', marginBottom: '16px', display: 'flex', justifyContent: 'center' }}>
+              <div style={{ color: '#3b82f6', marginBottom: '12px', display: 'flex', justifyContent: 'center' }}>
                 {item.icon}
               </div>
-              <h3 style={{ fontWeight: '600', marginBottom: '8px', fontSize: '15px' }}>{item.title}</h3>
-              <p style={{ color: '#a0a0a0', fontSize: '13px', lineHeight: '1.6' }}>{item.desc}</p>
+              <h3 style={{ fontWeight: '600', marginBottom: '8px', fontSize: 'clamp(13px, 3vw, 15px)' }}>{item.title}</h3>
+              <p style={{ color: '#a0a0a0', fontSize: 'clamp(11px, 2.5vw, 13px)', lineHeight: '1.6' }}>{item.desc}</p>
             </motion.div>
           ))}
         </div>
