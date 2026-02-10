@@ -2,7 +2,7 @@
 
 My personal portfolio website built to showcase my work, skills, and experience as a Backend Software Engineer.
 
-🔗 **Live:** [portfolio-beta-indol-74.vercel.app](https://portfolio-beta-indol-74.vercel.app)
+🔗 **Live:** [View Portfolio →](https://yashwanth-krishna.vercel.app/)
 
 ---
 
