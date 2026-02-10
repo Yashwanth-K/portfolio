@@ -1,4 +1,4 @@
-# yashwanthkrishna.dev
+# My portfolio
 
 My personal portfolio — built to showcase my work, skills, and experience as a Backend Software Engineer.
 
