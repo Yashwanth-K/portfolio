@@ -5,27 +5,27 @@ import { FiMail, FiGithub, FiLinkedin, FiMapPin } from 'react-icons/fi';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-2xl mx-auto text-center">
+    <section id="contact" style={{ padding: '120px 24px', borderTop: '1px solid #1a1a1a' }}>
+      <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-blue-400 text-sm font-medium mb-2">
-            // contact
+          <p style={{ color: '#3b82f6', fontSize: '14px', fontWeight: '600', marginBottom: '12px', letterSpacing: '2px', textTransform: 'uppercase' }}>
+            Contact
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 style={{ fontSize: '36px', fontWeight: 'bold', marginBottom: '20px' }}>
             Let&apos;s{' '}
-            <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+            <span style={{ background: 'linear-gradient(to right, #3b82f6, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               connect
             </span>
           </h2>
-          <p className="text-[#a0a0a0] leading-relaxed mb-10">
-            I&apos;m currently open to backend / SDE roles where engineering
-            depth is valued. Whether you have an opportunity, a question, or
-            just want to say hi — my inbox is always open.
+          <p style={{ color: '#a0a0a0', lineHeight: '1.8', marginBottom: '48px', fontSize: '16px' }}>
+            I&apos;m always open to conversations around challenging engineering
+            problems and impactful product work. Feel free to reach out.
           </p>
         </motion.div>
 
@@ -35,75 +35,88 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="grid sm:grid-cols-2 gap-4 mb-10"
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '40px' }}
         >
           <a
             href="mailto:yashwanthkrishne@gmail.com"
-            className="flex items-center gap-4 p-5 bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl hover:border-blue-500/50 transition-colors group"
+            style={{
+              display: 'flex', alignItems: 'center', gap: '16px', padding: '20px',
+              backgroundColor: '#1a1a1a', border: '1px solid #2a2a2a', borderRadius: '12px',
+              textDecoration: 'none', transition: 'border-color 0.3s',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(59,130,246,0.5)')}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#2a2a2a')}
           >
-            <FiMail
-              className="text-blue-400 group-hover:scale-110 transition-transform"
-              size={24}
-            />
-            <div className="text-left">
-              <p className="text-xs text-[#666]">Email</p>
-              <p className="text-sm text-[#a0a0a0] group-hover:text-white transition-colors">
-                yashwanthkrishne@gmail.com
-              </p>
+            <FiMail style={{ color: '#3b82f6', flexShrink: 0 }} size={24} />
+            <div style={{ textAlign: 'left' }}>
+              <p style={{ color: '#666', fontSize: '11px', marginBottom: '4px' }}>Email</p>
+              <p style={{ color: '#a0a0a0', fontSize: '13px' }}>yashwanthkrishne@gmail.com</p>
             </div>
           </a>
 
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/yashwanth-k/"
             target="_blank"
-            className="flex items-center gap-4 p-5 bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl hover:border-blue-500/50 transition-colors group"
+            style={{
+              display: 'flex', alignItems: 'center', gap: '16px', padding: '20px',
+              backgroundColor: '#1a1a1a', border: '1px solid #2a2a2a', borderRadius: '12px',
+              textDecoration: 'none', transition: 'border-color 0.3s',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(59,130,246,0.5)')}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#2a2a2a')}
           >
-            <FiLinkedin
-              className="text-blue-400 group-hover:scale-110 transition-transform"
-              size={24}
-            />
-            <div className="text-left">
-              <p className="text-xs text-[#666]">LinkedIn</p>
-              <p className="text-sm text-[#a0a0a0] group-hover:text-white transition-colors">
-                Yashwanth Krishna
-              </p>
+            <FiLinkedin style={{ color: '#3b82f6', flexShrink: 0 }} size={24} />
+            <div style={{ textAlign: 'left' }}>
+              <p style={{ color: '#666', fontSize: '11px', marginBottom: '4px' }}>LinkedIn</p>
+              <p style={{ color: '#a0a0a0', fontSize: '13px' }}>Yashwanth Krishna</p>
             </div>
           </a>
 
           <a
             href="https://github.com/Yashwanth-K"
             target="_blank"
-            className="flex items-center gap-4 p-5 bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl hover:border-blue-500/50 transition-colors group"
+            style={{
+              display: 'flex', alignItems: 'center', gap: '16px', padding: '20px',
+              backgroundColor: '#1a1a1a', border: '1px solid #2a2a2a', borderRadius: '12px',
+              textDecoration: 'none', transition: 'border-color 0.3s',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(59,130,246,0.5)')}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#2a2a2a')}
           >
-            <FiGithub
-              className="text-blue-400 group-hover:scale-110 transition-transform"
-              size={24}
-            />
-            <div className="text-left">
-              <p className="text-xs text-[#666]">GitHub</p>
-              <p className="text-sm text-[#a0a0a0] group-hover:text-white transition-colors">
-                Yashwanth-K
-              </p>
+            <FiGithub style={{ color: '#3b82f6', flexShrink: 0 }} size={24} />
+            <div style={{ textAlign: 'left' }}>
+              <p style={{ color: '#666', fontSize: '11px', marginBottom: '4px' }}>GitHub</p>
+              <p style={{ color: '#a0a0a0', fontSize: '13px' }}>Yashwanth-K</p>
             </div>
           </a>
 
-          <div className="flex items-center gap-4 p-5 bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl">
-            <FiMapPin className="text-blue-400" size={24} />
-            <div className="text-left">
-              <p className="text-xs text-[#666]">Location</p>
-              <p className="text-sm text-[#a0a0a0]">Bengaluru, India</p>
+          <div
+            style={{
+              display: 'flex', alignItems: 'center', gap: '16px', padding: '20px',
+              backgroundColor: '#1a1a1a', border: '1px solid #2a2a2a', borderRadius: '12px',
+            }}
+          >
+            <FiMapPin style={{ color: '#3b82f6', flexShrink: 0 }} size={24} />
+            <div style={{ textAlign: 'left' }}>
+              <p style={{ color: '#666', fontSize: '11px', marginBottom: '4px' }}>Location</p>
+              <p style={{ color: '#a0a0a0', fontSize: '13px' }}>Bengaluru, India</p>
             </div>
           </div>
         </motion.div>
 
-        {/* CTA Button */}
+        {/* CTA */}
         <motion.a
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
           href="mailto:yashwanthkrishne@gmail.com"
-          className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg font-medium hover:opacity-90 transition-opacity text-lg"
+          style={{
+            display: 'inline-block', padding: '14px 36px',
+            background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
+            borderRadius: '8px', fontWeight: '500', fontSize: '16px',
+            color: '#ffffff', textDecoration: 'none',
+          }}
         >
           Say Hello 👋
         </motion.a>

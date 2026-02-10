@@ -1,12 +1,26 @@
 export default function Footer() {
   return (
-    <footer className="py-8 px-6 border-t border-[#2a2a2a]">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-[#666] text-sm">
-          © {new Date().getFullYear()} Yashwanth Krishna. Built with Next.js &
-          Tailwind CSS.
+    <footer
+      style={{
+        padding: '32px 24px',
+        borderTop: '1px solid #2a2a2a',
+      }}
+    >
+      <div
+        style={{
+          maxWidth: '900px',
+          margin: '0 auto',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '16px',
+        }}
+      >
+        <p style={{ color: '#666', fontSize: '13px' }}>
+          © {new Date().getFullYear()} Yashwanth Krishna. Built with Next.js & Tailwind CSS.
         </p>
-        <p className="text-[#666] text-sm">
+        <p style={{ color: '#666', fontSize: '13px' }}>
           Designed & developed with ☕ and curiosity.
         </p>
       </div>

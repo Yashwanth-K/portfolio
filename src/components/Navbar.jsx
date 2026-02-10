@@ -5,7 +5,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 
 const navLinks = [
   { name: 'About', href: '#about' },
-  { name: 'Tech Stack', href: '#techstack' },
+  { name: 'Skills', href: '#techstack' },
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
@@ -25,28 +25,57 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#2a2a2a]'
+          ? 'bg-[#0a0a0a]/95 backdrop-blur-md border-b border-[#2a2a2a]'
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
+      <div
+        style={{
+          maxWidth: '1100px',
+          margin: '0 auto',
+          padding: '16px 24px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
         <a
           href="#"
-          className="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent"
+          style={{
+            fontSize: '24px',
+            fontWeight: 'bold',
+            background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            textDecoration: 'none',
+          }}
         >
           YK.
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '32px',
+          }}
+          className="hidden lg:flex"
+        >
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm text-[#a0a0a0] hover:text-white transition-colors duration-200"
+              style={{
+                fontSize: '14px',
+                color: '#a0a0a0',
+                textDecoration: 'none',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => (e.target.style.color = '#ffffff')}
+              onMouseLeave={(e) => (e.target.style.color = '#a0a0a0')}
             >
               {link.name}
             </a>
@@ -54,7 +83,14 @@ export default function Navbar() {
           <a
             href="/resume.pdf"
             target="_blank"
-            className="text-sm px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity"
+            style={{
+              fontSize: '14px',
+              padding: '8px 20px',
+              background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
+              borderRadius: '8px',
+              color: '#ffffff',
+              textDecoration: 'none',
+            }}
           >
             Resume
           </a>
@@ -62,7 +98,8 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="lg:hidden"
+          style={{ color: '#ffffff', background: 'none', border: 'none', cursor: 'pointer' }}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -71,24 +108,29 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#111111] border-t border-[#2a2a2a] px-6 py-4">
+        <div
+          className="lg:hidden"
+          style={{
+            backgroundColor: '#111111',
+            borderTop: '1px solid #2a2a2a',
+            padding: '16px 24px',
+          }}
+        >
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="block py-3 text-[#a0a0a0] hover:text-white transition-colors"
+              style={{
+                display: 'block',
+                padding: '12px 0',
+                color: '#a0a0a0',
+                textDecoration: 'none',
+              }}
             >
               {link.name}
             </a>
           ))}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            className="block mt-3 text-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"
-          >
-            Resume
-          </a>
         </div>
       )}
     </nav>
