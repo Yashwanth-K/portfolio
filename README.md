@@ -8,7 +8,7 @@ My personal portfolio — built to showcase my work, skills, and experience as a
 
 ## About
 
-This is my developer portfolio where I share what I've built, the technologies I work with, and my professional journey so far. Designed to be minimal, fast, and easy to navigate.
+My corner of the internet — projects, experience, and how to reach me.
 
 ---
 
