@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# yashwanthkrishna.dev — Personal Portfolio
 
-## Getting Started
+My personal portfolio website built to showcase my work, skills, and experience as a Backend Software Engineer.
 
-First, run the development server:
+🔗 **Live:** [portfolio-beta-indol-74.vercel.app](https://portfolio-beta-indol-74.vercel.app)
+
+---
+
+## About
+
+This is my developer portfolio where I share what I've built, the technologies I work with, and my professional journey so far. Designed to be minimal, fast, and easy to navigate.
+
+---
+
+## Built With
+
+- **Framework:** Next.js 16
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** React Icons
+- **Deployment:** Vercel
+
+---
+
+## Sections
+
+- **Hero** — Quick intro and tech summary
+- **About** — Who I am and what drives me
+- **Tech Stack** — Technologies I use daily
+- **Experience** — Companies I've worked with
+- **Projects** — Things I've built
+- **Contact** — How to reach me
+
+---
+
+## Run Locally
 
 ```bash
+# Clone the repo
+git clone https://github.com/Yashwanth-K/portfolio.git
+
+# Navigate to project
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Deployed on [Vercel](https://vercel.com). Every push to `main` triggers an automatic deployment.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Contact
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Email:** yashwanthkrishne@gmail.com
+- **LinkedIn:** [Yashwanth Krishna](https://www.linkedin.com/in/yashwanth-krishna-bab2b0132/)
+- **GitHub:** [Yashwanth-K](https://github.com/Yashwanth-K)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+Made with ☕ and curiosity.
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Push:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+git add .
+git commit -m "add portfolio README"
+git push
+```
+
+---
