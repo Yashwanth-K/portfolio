@@ -65,7 +65,7 @@ Deployed on [Vercel](https://vercel.com). Every push to `main` triggers automati
 
 📩 [yashwanthkrishne@gmail.com](mailto:yashwanthkrishne@gmail.com)
 
-💼 [LinkedIn](https://www.linkedin.com/in/yashwanth-krishna-bab2b0132/)
+💼 [LinkedIn](https://www.linkedin.com/in/yashwanth-k/)
 
 💻 [GitHub](https://github.com/Yashwanth-K)
 
